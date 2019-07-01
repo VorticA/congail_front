@@ -1,0 +1,180 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    color: grey;
+}
+
+.vids{
+    padding-left: 30px;
+}
+
+.dropdown-item.active{
+    background-color: rgb(51, 51, 51);
+    color: white;
+}
+
+/* Navbar */
+
+.navbar-brand img{
+    width:120px;;
+}
+li.nav-item{
+    padding-right:18px;
+}
+
+li.last{
+    padding-right:10px;
+}
+
+.bg-dark,.navbar-dark {
+    background-color: rgb(36, 36, 36) !important;
+}
+
+.nav-link{
+    font-size: 20px;
+}
+
+nav{
+    border-bottom: 3px solid rgb(133, 0, 0);
+}
+
+
+
+/* Carousel */
+
+.carousel-item{
+    max-height: 800px;
+}
+
+
+.carousel-item img{
+    position: static;
+    width: 100%;
+}
+
+.lang{
+    width: 20px;
+}
+
+
+.jumbotron.bg-dark{
+    color: grey;
+}
+
+/* Parallax */
+
+.parallax{
+    height: 300px;
+    border-top: 3px solid rgb(133,0,0);
+    background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#p1{
+    background-image: url("img/p1.jpg");
+
+}
+
+/*  */
+
+
+
+.bg-dark .dropdown-item{
+    color: grey;
+}
+
+.bg-dark .dropdown-item:hover{
+    color: grey;
+    background-color:rgb(51, 51, 51);
+}
+
+
+.my-2{
+    border: none;
+    height:1px;
+    background-color: rgb(218, 167, 0);  
+}
+
+.my-3{
+    border: none;
+    height:1px;
+    background-color: rgb(133, 0, 0);
+}
+
+.btn-primary{
+    background-color: rgb(218, 167, 0);
+    border-color:rgb(218, 167, 0);
+}
+
+.between{
+    height:30px;
+    background-color:rgb(133, 0, 0);
+    border-top: 2px solid rgb(218, 167, 0);  
+}
+
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+
+
+/*---Media Queries --*/
+
+
+
+
+@media (max-width: 992px) {
+
+    .parallax {
+        background-attachment: scroll !important;
+      }
+  }
+  
+  @media (max-width: 767px) {
+.nav-hr{
+    border: none;
+    height:1px;
+    background-color: rgb(218, 167, 0); 
+    width: 100%;
+}
+
+
+  }
+
+  
+  
+  @media (max-width: 576px) {
+
+  }
+
+
+@media (min-width: 1367px){
+    .carousel-item{
+        max-height: 800px;
+    }
+
+    .carousel-item img{
+        position: relative;
+        top: -100px;
+        position: relative;
+    }
+}
+
+@media (min-width: 767px){
+    .colup{
+        position:absolute;
+    }
+}
