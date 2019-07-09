@@ -1,0 +1,25 @@
+<app-post-article [hidden]="!hasUser || !user.roleId==3"  (posted)="getArticles()" ></app-post-article>
+
+<div class="container">
+    <br>
+    <div class="col-12"><h1>Latest News</h1></div>
+</div>
+<div class="container-fluid">
+    <hr class="my-2">
+</div>
+<div class="container">
+    <div class="col-12 text-center" id="articles">
+    
+      <div class="col-12" id="articles-content" [hidden]="loading || hasError || !hasArticles">
+        <div *ngFor="let article of articles">
+            <app-article (editArticle)="editArticle($event)" (deleteArticle)="deleteArticle($event)" [article]="article" [hasUser]="hasUser" [user]="user"></app-article>
+        </div>
+      </div>
+    
+      <div class="col-12" id="loading" [hidden]="!loading">
+        <div class="above-loader"></div>
+        <img src="https://congail.com/img/loader.gif">
+      </div>
+    </div>
+    
+</div>

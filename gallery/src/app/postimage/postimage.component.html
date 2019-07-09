@@ -1,0 +1,65 @@
+<div class="input-group" style="cursor:pointer" [hidden]="loading">
+  <div class="custom-file">
+    <input type="file" (change)="selected($event)" class="custom-file-input btn" id="inputGroupFile01"
+      aria-describedby="inputGroupFileAddon01">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+</div>
+
+<button type="button" hidden data-toggle="modal" data-target="#uploadModal" id="triggerModal"></button>
+<!-- Modal -->
+<div class="modal fade" role="dialog" id="uploadModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Upload Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [hidden]="loading" #postForm="ngForm">
+          <br>
+          <br>
+          <h4>Title:</h4>
+          <br>
+          <div class="col-12">
+            <input placeholder="Post title" type="text" class="form-control" id="title" required
+            [(ngModel)]="model.title" name="title">
+          </div>
+          <br>
+          <h4>Text:</h4>
+          <br>
+          <div class="col-12">
+            <textarea rows="4" placeholder="Post content" type="" class="form-control" id="text" required
+            [(ngModel)]="model.text" name="title"></textarea>
+          </div>
+          <br>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" [hidden]="!model.title || !model.text" class="btn btn-warning" data-dismiss="modal" (click)="upload(); reset(postForm)">Upload</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="reset(postForm)">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Loader -->
+<div class="row text-center" [hidden]="!loading">
+  <div class="col-12" id="loading">
+    <div class="above-loader"></div>
+    <img src="https://congail.com/img/loader.gif">
+  </div>
+</div>
+
+<!-- Error -->
+<div [hidden]="!hasError">
+    <br>
+      <div class="alert alert-danger" role="alert">
+          {{errorMessage}}
+        </div>
+        <br>
+  </div>
+
+<br>

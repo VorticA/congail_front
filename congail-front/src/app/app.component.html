@@ -6,7 +6,7 @@
     <!-- Brand -->
 
     <div class="navbar-brand">
-      <a href="#"><img src="img/logo.png"></a>
+      <a href="#"><img src="https://congail.com/test/img/logo.png"></a>
     </div>
 
     <!-- Collapse button -->
@@ -30,7 +30,6 @@
             <div class="colup bg-dark collapse" id="ddm">
               <a class="dropdown-item" href="#origin">Origin</a>
               <a class="dropdown-item" href="#music">Music</a>
-              <a class="dropdown-item" href="#classical">Congail Classical</a>
             </div>
           </div>
         </li>
@@ -50,6 +49,10 @@
     <hr class="nav-hr">
   </div>
 </nav>
+
+<!-- If admin is logged in -->
+<div *ngIf="hasUser && user.role==3" class="admin-scroll col-12 text-center"><p>Welcome {{user.username}}!</p></div>
+
 
 <div class="main" id="home">
   <!--- Image Slider -->
@@ -124,20 +127,22 @@
     <div class="container">
       <h1 class="display-5">Beware...</h1>
       <p class="lead"><cite>
-          “In the land twixt day and night, where ravens dance and angels dream... ”</cite></p>
-      <hr class="my-2">
-      <p>...a mixture of blues, punk, rock and old Irish magic.</p>
+        “In the land twixt day and night, where ravens dance and angels dream... ”</cite></p>
+        <hr class="my-2">
+        <p>...a mixture of blues, punk, rock and old Irish magic.</p>
+      </div>
+      
     </div>
-
-  </div>
-  <div class="container-fluid">
-    <hr class="my-3">
-  </div>
-
-  <!-- Videos -->
-
+    <div class="container-fluid">
+      <hr class="my-3">
+    </div>
+    
+    
+    
+    <!-- Videos -->
+    
   <div class="container padding">
-
+    
     <br>
     <h1 class="display-2 vids">Videos</h1>
     <hr class="my-2">
@@ -147,7 +152,7 @@
         <div class="container">
           <div class="videoWrapper">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Rik8rG0EGQ4" frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <br>
@@ -156,18 +161,21 @@
         <div class="container">
           <div class="videoWrapper">
             <iframe
-              src="https://web.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2F1827296337286659%2Fvideos%2F2023494017666889%2F&show_text=0&width=560"
-              width="560" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-              allowTransparency="true" allowFullScreen="true"></iframe>
+            src="https://web.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2F1827296337286659%2Fvideos%2F2023494017666889%2F&show_text=0&width=560"
+            width="560" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+            allowTransparency="true" allowFullScreen="true"></iframe>
           </div>
         </div>
       </div>
     </div>
     <br>
   </div>
-
+  
 </div>
-
+<div class="between"></div>
+<!-- Articles -->
+<app-articles [user]="user" [hasUser]="hasUser" id="articles"></app-articles>
+<div class="between"></div>
 <!-- First parallax -->
 
 <div class="parallax" id="p1"></div>
@@ -195,3 +203,40 @@
       <p clas="lead"></p>
     </div>
   </div>
+</div>
+  <div class="between"></div>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="container-fluid padding bg-dark">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <br>
+          <p>555-555-5555</p>
+          <hr class="my-3">
+          <p>email@myemail.com</p>
+          <p>100 Street Name</p>
+          <p>City, State, 00000</p>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <h5>Our Hours</h5>
+          <hr class="my-3">
+          <p>Monday: 9am-5pm</p>
+          <p>Saturday: 10am-4pm</p>
+          <p>Sunday: closed</p>
+        </div>
+        <div class="col-md-4">
+          <br>
+          <h5>Admin</h5>
+          <hr class="my-3">
+          <app-login (receivedUser)="gotUser($event)"></app-login>
+        </div>
+        <div class="col-12">
+          <hr class="my-2">
+          <h5>&copy; Vortic_A</h5>
+        </div>
+      </div>
+    </div>
+  </footer>

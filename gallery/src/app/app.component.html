@@ -1,0 +1,99 @@
+<!-- Navigation -->
+
+ <div class="sticky-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid bg-dark">
+      
+          <!-- Brand -->
+      
+          <div class="navbar-brand">
+            <a href="#"><img src="https://congail.com/test/img/logo.png"></a>
+          </div>
+      
+          <!-- Collapse button -->
+      
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navCol">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      
+        <div class="collapse navbar-collapse" id="navCol">
+          <hr class="nav-hr">
+          <div class="container-fluid">
+            <ul class="navbar-nav ml-auto">
+              <hr class="thick">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item" id="ab">
+                <div class="dropdown">
+                  <button class="btn btn-link nav-link dropdown-toggle" href="#about">About</button>
+                  <div class="colup bg-dark collapse" id="ddm">
+                    <a class="dropdown-item" href="#origin">Origin</a>
+                    <a class="dropdown-item" href="#music">Music</a>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Members</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <hr class="nav-hr">
+        </div>
+      </nav>
+      <!-- If admin is logged in -->
+      <div *ngIf="hasUser && user.role==3" class="admin-scroll col-12 text-center position">
+        <p>Welcome {{user.username}}!</p>
+      </div>
+      
+ </div>
+
+
+<div class="main" id="gallery">
+
+  
+  <app-gallery [hasUser]="hasUser" [user]="user"></app-gallery>
+
+</div>
+
+
+
+<!-- Footer -->
+
+<footer>
+  <div class="container-fluid padding bg-dark">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <br>
+        <h5>Contact</h5>
+        <hr class="my-3">
+        <p>congailband@congail.com</p>
+      </div>
+      <div class="col-md-4">
+        <br>
+        <h5>Web development by</h5>
+        <hr class="my-3">
+        <p>Victor Velichkov</p>
+        <p>Vortic_A</p>
+        <p>viki8782@gmail.com</p>
+      </div>
+      <div class="col-md-4">
+        <br>
+        <h5>Admin</h5>
+        <hr class="my-3">
+        <app-login (receivedUser)="gotUser($event)"></app-login>
+      </div>
+      <div class="col-12">
+        <hr class="my-2">
+        <h5>&copy; Vortic_A</h5>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+.article-meta{
+    font-size: 10pt;
+}
+.icon{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.icon:hover{
+    color: rgb(105, 105, 105)
+}
+i{
+    pointer-events: all;
+}
+
+.btn-primary{
+    background-color: rgb(218, 167, 0);
+    border-color:rgb(218, 167, 0);
+    width:100%;
+}

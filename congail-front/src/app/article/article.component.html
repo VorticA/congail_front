@@ -1,0 +1,98 @@
+<!-- Title -->
+
+<div [hidden]="editMode">
+    <hr class="my-3">
+    <div>
+      <h4 class="mt-4">{{article.title}}</h4>
+    </div>
+    <!-- Author -->
+    <p class="lead">
+    
+      <div class="row">
+        <div class="col-6 text-left">
+          <p class="article-meta">{{article.poster}}</p>
+        </div>
+        <hr>
+    
+        <!-- Date/Time -->
+        <div class="col-6 text-right">
+          <p class="article-meta">{{article.postDate}}</p>
+    
+        </div>
+        <hr>
+      </div>
+    
+      <div class="row text-right">
+        <div class="col-12">
+    
+          <i *ngIf="hasUser && user.role==3" class="far fa-trash-alt icon" data-toggle="modal"
+            [attr.data-target]="'#deleteModal'+article.id"></i>
+          <a (click)="turnOnEditMode()"><i *ngIf="hasUser && user.role==3" class="far fa-edit icon" (click)="turnOnEditMode()"></i></a>
+        </div>
+      </div>
+    
+    
+      <!-- Post Content -->
+      <hr class="my-3">
+    
+      <p class="lead text-justify">{{article.text}}</p>
+    
+    
+    
+      <hr class="my-2"><br>
+</div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" role="dialog" [attr.id]="'deleteModal'+article.id">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Delete article</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete this article?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="delete()">Delete</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Edit Mode -->
+
+  <div class="col-12" *ngIf="editMode">
+    <br>
+    <h2>Edit</h2>
+    <form [hidden]="loading">
+      <br>
+      <br>
+      <h4>Title:</h4>
+      <br>
+      <div class="col-12">
+        <input placeholder="Post title" type="text" class="form-control" id="edit-title" required [(ngModel)]="editModel.title"
+          name="edit-title">
+      </div>
+      <br>
+      <h4>Text:</h4>
+      <br>  
+      <div class="col-12">
+        <textarea rows="4" placeholder="Post content" type="text" class="form-control" id="edit-text" required
+          [(ngModel)]="editModel.text" name="edit-text"></textarea>
+      </div>
+      <br>
+
+      <div class="col-12">
+        <button type="button" class="btn btn-primary" [hidden]="!editModel.title || !editModel.text"
+          (click)="edit()">Post</button>
+      </div>
+      <br>
+    </form>
+    <hr class="my-2">
+  </div>

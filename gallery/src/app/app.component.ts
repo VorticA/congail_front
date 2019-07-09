@@ -1,6 +1,5 @@
 import { Component, ViewEncapsulation, ViewChild, SimpleChanges } from '@angular/core';
 import { User } from './models/user';
-import { ArticlesComponent } from './articles/articles.component';
 
 @Component({
   selector: 'app-root',

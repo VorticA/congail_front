@@ -139,14 +139,22 @@ nav{
     background-color: rgb(36, 36, 36) !important;   
 }
 
+.card.bg-dark{
+    border: 1px solid grey;
+}
+
 .admin-scroll
 {
     height: 25px;
     background-color: rgb(218, 167, 0) !important; 
     padding-bottom: 5px;
     color: rgb(133, 0, 0);
+    border-bottom: 2px solid rgb(133, 0, 0);
 }
 
+.main{
+    margin-top: 10px;
+}
 
 
 

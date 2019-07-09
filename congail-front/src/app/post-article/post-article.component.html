@@ -1,0 +1,44 @@
+<div class="container">
+  <br>
+  <h2>New Post</h2>
+  <form [hidden]="loading" #postForm="ngForm">
+    <br>
+    <br>
+    <h4>Title:</h4>
+    <br>
+    <div class="col-12">
+      <input placeholder="Post title" type="text" class="form-control" id="title" required [(ngModel)]="model.title"
+        name="title">
+    </div>
+    <br>
+    <h4>Text:</h4>
+    <br>
+    <div class="col-12">
+      <textarea rows="4" placeholder="Post content" type="" class="form-control" id="text" required
+        [(ngModel)]="model.text" name="title"></textarea>
+    </div>
+    <br>
+    
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary" [hidden]="!model.title || !model.text"
+        (click)="post(); reset(postForm)">Post</button>
+    </div>
+    <br>
+  </form>
+
+  <div [hidden]="!loading" class="text-center">
+    <br>
+    <img src="https://congail.com/img/loader.gif">
+    <br>
+  </div>
+  <br>
+
+  <div [hidden]="!hasError">
+    <br>
+    <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+    <br>
+  </div>
+</div>
+<hr class="my-2">
