@@ -1,4 +1,4 @@
-<app-post-article [hidden]="!hasUser || !user.roleId==3"  (posted)="getArticles()" ></app-post-article>
+<app-post-article [hidden]="!hasUser || user.role!=3"  (posted)="getArticles()" ></app-post-article>
 
 <div class="container">
     <br>

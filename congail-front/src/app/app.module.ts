@@ -6,7 +6,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserService } from './user.service';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticleComponent } from './article/article.component';
@@ -25,7 +24,6 @@ import { PostArticleComponent } from './post-article/post-article.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule.forRoot(),
     ReactiveFormsModule
   ],
   providers: [{provide: UserService, useClass: UserService}],

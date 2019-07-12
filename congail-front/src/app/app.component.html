@@ -34,13 +34,13 @@
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Members</a>
+          <a class="nav-link" href="#members">Members</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Gallery</a>
+          <a class="nav-link org-link" href="https://congail.com/gallery" id="gal-link">Gallery</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Contact</a>
+          <a class="nav-link" href="#contact">Contact</a>
         </li>
 
 
@@ -51,7 +51,9 @@
 </nav>
 
 <!-- If admin is logged in -->
-<div *ngIf="hasUser && user.role==3" class="admin-scroll col-12 text-center"><p>Welcome {{user.username}}!</p></div>
+<div *ngIf="hasUser && user.role==3" class="admin-scroll col-12 text-center">
+  <p>Welcome {{user.username}}!</p>
+</div>
 
 
 <div class="main" id="home">
@@ -127,22 +129,22 @@
     <div class="container">
       <h1 class="display-5">Beware...</h1>
       <p class="lead"><cite>
-        “In the land twixt day and night, where ravens dance and angels dream... ”</cite></p>
-        <hr class="my-2">
-        <p>...a mixture of blues, punk, rock and old Irish magic.</p>
-      </div>
-      
+          “In the land twixt day and night, where ravens dance and angels dream... ”</cite></p>
+      <hr class="my-2">
+      <p>...a mixture of blues, punk, rock and old Irish magic.</p>
     </div>
-    <div class="container-fluid">
-      <hr class="my-3">
-    </div>
-    
-    
-    
-    <!-- Videos -->
-    
+
+  </div>
+  <div class="container-fluid">
+    <hr class="my-3">
+  </div>
+
+
+
+  <!-- Videos -->
+
   <div class="container padding">
-    
+
     <br>
     <h1 class="display-2 vids">Videos</h1>
     <hr class="my-2">
@@ -152,7 +154,7 @@
         <div class="container">
           <div class="videoWrapper">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Rik8rG0EGQ4" frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
         <br>
@@ -160,17 +162,14 @@
       <div class="col-md-6">
         <div class="container">
           <div class="videoWrapper">
-            <iframe
-            src="https://web.facebook.com/plugins/video.php?href=https%3A%2F%2Fweb.facebook.com%2F1827296337286659%2Fvideos%2F2023494017666889%2F&show_text=0&width=560"
-            width="560" height="420" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-            allowTransparency="true" allowFullScreen="true"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/c-WW3ROiQzQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
     <br>
   </div>
-  
+
 </div>
 <div class="between"></div>
 <!-- Articles -->
@@ -200,43 +199,131 @@
       </h1>
       <hr class="my-3">
       <br>
-      <p clas="lead"></p>
+      <p class="about">The band was created by Maebh, Brenos and Aoibhe Mac Gonagle who are classical musicians.Later
+        drummer Stoil Bozhilov, guitarist Nikola Lulov and flutist Javor Angelov joined and the sound of the band was
+        formed.</p>
+    </div>
+    <hr class="my-2">
+    <br><br>
+    <div class="container-fluid" id="music">
+      <h1 calss="display-5">
+        Music
+      </h1>
+      <hr class="my-3">
+      <br>
+      <p class="about">Their music is a kind of protest against the stagnation and fear of creation, implanted in the
+        minds of classical musicians. It incorporates various elements, from classical to jazz, swing, punk and even
+        metal.</p>
     </div>
   </div>
 </div>
-  <div class="between"></div>
+<div class="between"></div>
 
-  <!-- Footer -->
+<!-- Members -->
 
-  <footer>
-    <div class="container-fluid padding bg-dark">
-      <div class="row text-center">
-        <div class="col-md-4">
-          <br>
-          <p>555-555-5555</p>
-          <hr class="my-3">
-          <p>email@myemail.com</p>
-          <p>100 Street Name</p>
-          <p>City, State, 00000</p>
-        </div>
-        <div class="col-md-4">
-          <br>
-          <h5>Our Hours</h5>
-          <hr class="my-3">
-          <p>Monday: 9am-5pm</p>
-          <p>Saturday: 10am-4pm</p>
-          <p>Sunday: closed</p>
-        </div>
-        <div class="col-md-4">
-          <br>
-          <h5>Admin</h5>
-          <hr class="my-3">
-          <app-login (receivedUser)="gotUser($event)"></app-login>
-        </div>
-        <div class="col-12">
-          <hr class="my-2">
-          <h5>&copy; Vortic_A</h5>
+<div class="container-fluid" id="members">
+  <h1 class="display-4 container">Members</h1>
+  <hr class="my-2">
+  <br>
+  <div class="row">
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/04.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Maebh</h4>
+          <p class="card-text">Vocals. Frightening at first, but there's nothing to worry about (unless you're a
+            cellist).
+          </p>
         </div>
       </div>
     </div>
-  </footer>
+    <br>
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/05.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Yavor</h4>
+          <p class="card-text">Flute. Does a pretty good job when he's not out of tune.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/07.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Aoibhe</h4>
+          <p class="card-text">Wee free violinist. Very evil, keep distance, because she bites, especially if you get
+            her
+            name wrong.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/08.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Nikola</h4>
+          <p class="card-text">Guitar. Brings Punk back to life and adores beans.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/09.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Stoil</h4>
+          <p class="card-text">Drums. Hits trash cans for a living. Beating up people is a hobby of his too.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col-md-4 col-sm-6">
+      <div class="card container">
+        <img class="card-img-top img-fluid" src="https://congail.com/test/img/carousel/10.webp" alt="Card image">
+        <div class="card-body">
+          <h4 class="card-title">Brenos</h4>
+          <p class="card-text">Bass. The Great Creator, The Joker and The Weirdo of the band. Loves Hawaiian shirts and
+            kicks up his bottom.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>
+<div class="between"></div>
+
+<!-- Footer -->
+
+<footer>
+  <div class="container-fluid padding bg-dark">
+    <div class="row text-center">
+      <div class="col-md-4" id="contact">
+        <br>
+        <h5>Contact</h5>
+        <hr class="my-3">
+        <p>congailband@congail.com</p>
+      </div>
+      <div class="col-md-4">
+        <br>
+        <h5>Web development by</h5>
+        <hr class="my-3">
+        <p>Victor Velichkov</p>
+        <p>Vortic_A</p>
+        <p>viki8782@gmail.com</p>
+      </div>
+      <div class="col-md-4">
+        <br>
+        <h5>Admin</h5>
+        <hr class="my-3">
+        <app-login (receivedUser)="gotUser($event)"></app-login>
+      </div>
+      <div class="col-12">
+        <hr class="my-2">
+        <h5>&copy; Vortic_A</h5>
+      </div>
+    </div>
+  </div>
+</footer>

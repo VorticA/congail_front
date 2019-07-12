@@ -147,8 +147,16 @@ nav{
     color: rgb(133, 0, 0);
 }
 
+.about{
+    font-size: 15pt !important;
+}
 
-
+.card{
+    margin-bottom: 20px;
+    background-color: rgb(36, 36, 36);
+    border: 1px solid grey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
 
 
 

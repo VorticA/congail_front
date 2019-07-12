@@ -2,7 +2,7 @@ export class User {
     /**
      *
      */
-    constructor(public id: number, public username: string, public email: string, public roleId: number) {
+    constructor(public id: number, public username: string, public email: string, public role: number) {
         
     }
 }
